@@ -4,7 +4,7 @@ class Brain < ApplicationRecord
   has_many :reviews
 
   validates :name, presence: true, uniqueness: true
-  validates :iq, inclusion: { in: (0..180) }
+  validates :qi, inclusion: { in: (0..180) }
   validates :price_per_day, presence: true
   validates :languages, inclusion: { in: ["French", "English", "Italian", "Mandarin", "Spanish"] }
   validates :specialties, inclusion: { in: ["Humor", "Eloquence", "Dev Profil", "Artist Soul", "Sporty Mindset"] }
