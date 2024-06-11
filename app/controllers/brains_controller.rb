@@ -9,9 +9,9 @@ class BrainsController < ApplicationController
     @brain = Brain.find(params[:id])
   end
 
-  # def new
-  #   @brain = Brain.new
-  # end
+  def new
+    @brain = Brain.new
+  end
 
   # def create
   #   @brain = Brain.new
