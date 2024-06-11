@@ -1,9 +1,12 @@
 <h1>All brains</h1>
+
 <div class="brains-list">
   <% @brains.each do |brain| %>
-    <%= brain.name %>
-    <%= brain.name %>
-    <%= brain.name %>
-
-  <%  %>
+    <%= image_tag(brain.image) %>
+    <h2><%= brain.name %></h2>
+    <p><%= brain.qi %></p>
+    <p><%= brain.languages %></p>
+    <p><%= brain.specialties %></p>
+    <p><%= brain.price_per_day %></p>
+  <% end %>
 </div>
