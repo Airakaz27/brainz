@@ -1,0 +1,33 @@
+.filters-bar {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  max-width: 700px;
+  border: 1px solid rgba(23, 23, 23, 0.2);
+  width: 100%;
+  border-radius: 40px;
+  padding: 16px;
+
+  &__category {
+    text-align: center;
+  }
+
+  &__icon {
+    color: $neutral-dark;
+  }
+
+  &__text {
+    color: $neutral-light;
+  }
+}
+
+.filters-bar a {
+  text-decoration: none;
+  opacity: 0.8;
+  transition: 0.3s ease-out;
+
+  &:hover {
+    opacity: 1;
+  }
+}
