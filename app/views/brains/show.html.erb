@@ -29,7 +29,8 @@
       <h2>Price / Day</h2>
       <p><%= @brain.price_per_day %> €</p>
 
-      <%= link_to "Delete this brain", brain_path(@brain), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+      <%= link_to "Edit", edit_brain_path(@brain) %>
+      <%= link_to "Delete", brain_path(@brain), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
     </div>
   </div>
 </div>

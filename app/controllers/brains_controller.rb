@@ -1,5 +1,5 @@
 class BrainsController < ApplicationController
-  before_action :set_brain, only: [:new, :show, :destroy]
+  before_action :set_brain, only: [:new, :show, :edit, :update, :destroy]
 
   def index
     @brains = Brain.all
@@ -22,12 +22,13 @@ class BrainsController < ApplicationController
     end
   end
 
-  # def edit
+  def edit
+  end
 
-  # end
-
-  # def update
-  # end
+  def update
+    @brain.update(brain_params)
+    redirect_to brain_path(@brain)
+  end
 
   def destroy
     @brain.destroy
