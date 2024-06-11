@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update]
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def show
     @brains = Brain.where(user_id: current_user.id)
@@ -11,6 +11,11 @@ class UsersController < ApplicationController
   def update
     @user.update(user_params)
     redirect_to user_path(@user)
+  end
+
+  def destroy
+    @user.destroy
+    redirect_to destroy_user_session_path(@user), status: :see_other
   end
 
   private

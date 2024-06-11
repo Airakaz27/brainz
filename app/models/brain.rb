@@ -2,7 +2,7 @@ class Brain < ApplicationRecord
   LANGUAGES = ["French", "English", "Italian", "Mandarin", "Spanish"]
   SPECIALTIES = ["Humor", "Eloquence", "Dev Profil", "Artist Soul", "Sporty Mindset"]
 
-  belongs_to :user
+  belongs_to :user, dependent: :destroy
   has_many :bookings
   has_many :reviews
   has_one_attached :photo
