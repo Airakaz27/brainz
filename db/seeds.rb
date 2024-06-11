@@ -64,7 +64,7 @@ Brain.create(
   qi: 92,
   languages: ["English", "Mandarin"],
   specialties: ["Sporty Mindset", "Eloquence"],
-  price_per_day: 25,
+  price_per_day: 103,
   user_id: romane.id,
   image: "app/assets/images/brainzImage.png"
 )
