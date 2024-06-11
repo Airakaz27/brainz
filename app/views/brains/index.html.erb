@@ -6,10 +6,17 @@
   <h1>All brains</h1>
   <div class="row">
     <div class="col">
+
       <div class="brains-list">
+
         <% @brains.each do |brain| %>
           <h2><%= brain.name %></h2>
-          <%= image_tag(brain.image, width: 200, height: 200) %>
+
+            <% if brain.photo.attached? %>
+              <%= cl_image_tag(brain.photo.key, width: 200, height: 200) %>
+            <% else %>
+              <img src="brainzImage.png" alt="">
+            <% end %>
 
           <h3>QI</h3>
           <p><%= brain.qi %></p>

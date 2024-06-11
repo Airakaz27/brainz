@@ -2,7 +2,8 @@
   <div class="row">
     <div class="col">
       <h1><%= @brain.name %></h1>
-      <%= image_tag(@brain.image, width: 200, height: 200) %>
+      <%= cl_image_tag(@brain.photo.key, width: 200, height: 200) %>
+      <% console %>
 
       <h2>QI</h2>
       <p><%= @brain.qi %></p>
