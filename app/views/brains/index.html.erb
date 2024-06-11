@@ -1,12 +1,37 @@
-<h1>All brains</h1>
+<div class="container">
+  <h1>All brains</h1>
+  <div class="row">
+    <div class="col">
+      <div class="brains-list">
+        <% @brains.each do |brain| %>
+          <h2><%= brain.name %></h2>
+          <%= image_tag(brain.image, width: 200, height: 200) %>
 
-<div class="brains-list">
-  <% @brains.each do |brain| %>
-    <%= image_tag(brain.image) %>
-    <h2><%= brain.name %></h2>
-    <p><%= brain.qi %></p>
-    <p><%= brain.languages %></p>
-    <p><%= brain.specialties %></p>
-    <p><%= brain.price_per_day %></p>
-  <% end %>
+          <h3>QI</h3>
+          <p><%= brain.qi %></p>
+
+          <h3>Language(s)</h3>
+          <ul>
+            <% brain.languages.each do |language| %>
+              <li><%= language %></li>
+            <% end %>
+          </ul>
+
+          <h3>Specialties</h3>
+          <ul>
+            <% brain.specialties.each do |speciality| %>
+              <li><%= speciality %></li>
+            <% end %>
+          </ul>
+
+          <h3>Price / Day</h3>
+          <p><%= brain.price_per_day %> €</p>
+
+          <%= link_to "More infos", brain_path(brain) %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <h1>All brains</h1>
+
 </div>

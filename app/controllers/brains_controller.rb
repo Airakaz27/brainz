@@ -1,5 +1,5 @@
 class BrainsController < ApplicationController
-  before_action :set_brain
+  # before_action :set_brain
 
   def index
     @brains = Brain.all
@@ -28,7 +28,7 @@ class BrainsController < ApplicationController
   #   params.require(:brain).permit(:image, :name, :qi, :languages, :specialties, :price_per_day)
   # end
 
-  def set_brain
-    @brain = Brain.find(params[:id])
-  end
+  # def set_brain
+  #   @brain = Brain.find(params[:id])
+  # end
 end
