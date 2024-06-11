@@ -2,8 +2,12 @@
   <div class="row">
     <div class="col">
       <h1><%= @brain.name %></h1>
-      <%= cl_image_tag(@brain.photo.key, width: 200, height: 200) %>
-      <% console %>
+
+      <% if @brain.photo.attached? %>
+        <%= cl_image_tag(@brain.photo.key, width: 200, height: 200) %>
+      <% else %>
+        <img src="brainzImage.png" alt="">
+      <% end %>
 
       <h2>QI</h2>
       <p><%= @brain.qi %></p>
@@ -24,6 +28,8 @@
 
       <h2>Price / Day</h2>
       <p><%= @brain.price_per_day %> €</p>
+
+      <%= link_to "Delete this brain", brain_path(@brain), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
     </div>
   </div>
 </div>
