@@ -1,41 +1,45 @@
-<div class="container">
-  <div class="banner-brainz" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.shutterstock.com/image-illustration/cartoon-decorative-oil-painting-vibrant-260nw-1545321431.jpg);">
-    <div class="container">
-      <h1>Mind your business...</h1>
-      <h2>Rent a brain !</h2>
-    </div>
+<div class="banner">
+  <h1>Mind your business... Rent a brain!</h1>
+</div>
+
+<div class="filters-bar">
+  <div class="filters-bar__category">
+    <a href="">
+      <i class="filters-bar__icon fa-solid fa-code"></i>
+      <div class="filters-bar__text">Dev Profile</div>
+    </a>
+  </div>
+  <div class="filters-bar__category">
+    <a href="">
+      <i class="filters-bar__icon fa-solid fa-face-smile"></i>
+      <div class="filters-bar__text">Humor</div>
+    </a>
+  </div>
+  <div class="filters-bar__category">
+    <a href="">
+      <i class="filters-bar__icon fa-solid fa-masks-theater"></i>
+      <div class="filters-bar__text">Eloquence</div>
+    </a>
+  </div>
+  <div class="filters-bar__category">
+    <a href="">
+      <i class="filters-bar__icon fa-solid fa-football"></i>
+      <div class="filters-bar__text">Sporty Mindset</div>
+    </a>
+  </div>
+  <div class="filters-bar__category">
+    <a href="">
+      <i class="filters-bar__icon fa-solid fa-palette"></i>
+      <div class="filters-bar__text">Artist Soul</div>
+    </a>
+  </div>
+  <div class="filters_button">
   </div>
 
-  <div class="filter-bar">
-    <div class="category">
-      <i class="fa-solid fa-code"></i>
-      <p>Dev Profile</p>
-    </div>
-    <div class="category">
-      <i class="fa-regular fa-face-smile"></i>
-      <p>Humor</p>
-    </div>
-    <div class="category">
-      <i class="fa-solid fa-hands-clapping"></i>
-      <p>Eloquence</p>
-    </div>
-    <div class="category">
-      <i class="fa-solid fa-football"></i>
-      <p>Sporty Mindset</p>
-    </div>
-    <div class="category">
-      <i class="fa-solid fa-palette"></i>
-      <p>Artist Soul</p>
-    </div>
-    <div class="filters_button">
-    </div>
-  </div>
-
-  <div class="brains-list">
-    <% @brains.each do |brain| %>
-      <%= brain.name %>
-      <%= brain.name %>
-      <%= brain.name %>
-    <%end %>
-  </div>
+<div class="grid__cards">
+  <%= @brains.each do |brain| %>
+    <%= brain.name %>
+    <%= brain.name %>
+    <%= brain.name %>
+  <% end %>
 </div>
