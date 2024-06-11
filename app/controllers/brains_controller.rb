@@ -36,7 +36,7 @@ class BrainsController < ApplicationController
     redirect_to user_path(current_user.id), status: :see_other
   end
 
-  # private
+  private
 
   def brain_params
     params.require(:brain).permit(:photo, :name, :qi, :languages, :specialties, :price_per_day)
