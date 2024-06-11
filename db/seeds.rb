@@ -40,7 +40,7 @@ puts "creating brains..."
 Brain.create!(
   name: "Cyril",
   qi: 8,
-  languages: ["Français"],
+  languages: ["French"],
   specialties: ["Humor", "Artist Soul"],
   price_per_day: 25,
   user_id: cyril.id,
@@ -48,22 +48,22 @@ Brain.create!(
 )
 
 Brain.create!(
-  name: "Cyril",
-  qi: 8,
-  languages: ["Français"],
-  specialties: ["Humor", "Artist Soul"],
-  price_per_day: 25,
-  user_id: cyril.id,
+  name: "Jeremy",
+  qi: 195,
+  languages: ["French", "English", "Spanish", "Mandarin"],
+  specialties: ["Dev Profil", "Eloquence"],
+  price_per_day: 307,
+  user_id: jeremy.id,
   image:
 )
 
 Brain.create!(
-  name: "Cyril",
-  qi: 8,
-  languages: ["Français"],
-  specialties: ["Humor", "Artist Soul"],
+  name: "Romane",
+  qi: 92,
+  languages: ["English", "Mandarin"],
+  specialties: ["Sporty Mindset", "Eloquence"],
   price_per_day: 25,
-  user_id: cyril.id,
+  user_id: romane.id,
   image:
 )
 puts "end brains"
