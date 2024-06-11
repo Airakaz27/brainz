@@ -46,4 +46,24 @@ Brain.create!(
   user_id: cyril.id,
   image:
 )
+
+Brain.create!(
+  name: "Cyril",
+  qi: 8,
+  languages: ["Français"],
+  specialties: ["Humor", "Artist Soul"],
+  price_per_day: 25,
+  user_id: cyril.id,
+  image:
+)
+
+Brain.create!(
+  name: "Cyril",
+  qi: 8,
+  languages: ["Français"],
+  specialties: ["Humor", "Artist Soul"],
+  price_per_day: 25,
+  user_id: cyril.id,
+  image:
+)
 puts "end brains"
