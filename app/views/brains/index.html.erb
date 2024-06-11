@@ -2,36 +2,45 @@
   <h1>Mind your business... Rent a brain!</h1>
 </div>
 
-<div class="filter-bar">
-  <div class="category">
-    <i class="fa-solid fa-code"></i>
-    <p>Dev Profile</p>
+<div class="filters-bar">
+  <div class="filters-bar__category">
+    <a href="">
+      <i class="filters-bar__icon fa-solid fa-code"></i>
+      <div class="filters-bar__text">Dev Profile</div>
+    </a>
   </div>
-  <div class="category">
-    <i class="fa-regular fa-face-smile"></i>
-    <p>Humor</p>
+  <div class="filters-bar__category">
+    <a href="">
+      <i class="filters-bar__icon fa-solid fa-face-smile"></i>
+      <div class="filters-bar__text">Humor</div>
+    </a>
   </div>
-  <div class="category">
-    <i class="fa-solid fa-hands-clapping"></i>
-    <p>Eloquence</p>
+  <div class="filters-bar__category">
+    <a href="">
+      <i class="filters-bar__icon fa-solid fa-masks-theater"></i>
+      <div class="filters-bar__text">Eloquence</div>
+    </a>
   </div>
-  <div class="category">
-    <i class="fa-solid fa-football"></i>
-    <p>Sporty Mindset</p>
+  <div class="filters-bar__category">
+    <a href="">
+      <i class="filters-bar__icon fa-solid fa-football"></i>
+      <div class="filters-bar__text">Sporty Mindset</div>
+    </a>
   </div>
-  <div class="category">
-    <i class="fa-solid fa-palette"></i>
-    <p>Artist Soul</p>
+  <div class="filters-bar__category">
+    <a href="">
+      <i class="filters-bar__icon fa-solid fa-palette"></i>
+      <div class="filters-bar__text">Artist Soul</div>
+    </a>
   </div>
   <div class="filters_button">
   </div>
 </div>
 
-<div class="brains-list">
-  <% @brains.each do |brain| %>
+<div class="grid__cards">
+  <%= @brains.each do |brain| %>
     <%= brain.name %>
     <%= brain.name %>
     <%= brain.name %>
-  <%end%>
+  <% end %>
 </div>
-
