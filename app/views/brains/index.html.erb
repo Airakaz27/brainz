@@ -5,37 +5,37 @@
       <h2>Rent a brain !</h2>
     </div>
   </div>
-</div>
 
-<div class="filter-bar">
-  <div class="category">
-    <i class="fa-solid fa-code"></i>
-    <p>Dev Profile</p>
+  <div class="filter-bar">
+    <div class="category">
+      <i class="fa-solid fa-code"></i>
+      <p>Dev Profile</p>
+    </div>
+    <div class="category">
+      <i class="fa-regular fa-face-smile"></i>
+      <p>Humor</p>
+    </div>
+    <div class="category">
+      <i class="fa-solid fa-hands-clapping"></i>
+      <p>Eloquence</p>
+    </div>
+    <div class="category">
+      <i class="fa-solid fa-football"></i>
+      <p>Sporty Mindset</p>
+    </div>
+    <div class="category">
+      <i class="fa-solid fa-palette"></i>
+      <p>Artist Soul</p>
+    </div>
+    <div class="filters_button">
+    </div>
   </div>
-  <div class="category">
-    <i class="fa-regular fa-face-smile"></i>
-    <p>Humor</p>
-  </div>
-  <div class="category">
-    <i class="fa-solid fa-hands-clapping"></i>
-    <p>Eloquence</p>
-  </div>
-  <div class="category">
-    <i class="fa-solid fa-football"></i>
-    <p>Sporty Mindset</p>
-  </div>
-  <div class="category">
-    <i class="fa-solid fa-palette"></i>
-    <p>Artist Soul</p>
-  </div>
-  <div class="filters_button">
-  </div>
-</div>
 
-<div class="brains-list">
-  <% @brains.each do |brain| %>
-    <%= brain.name
-    <%= brain.name %>
-    <%= brain.name %>
-  <%end %>
+  <div class="brains-list">
+    <% @brains.each do |brain| %>
+      <%= brain.name %>
+      <%= brain.name %>
+      <%= brain.name %>
+    <%end %>
+  </div>
 </div>
