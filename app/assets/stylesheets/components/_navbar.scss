@@ -1,12 +1,36 @@
-.navbar-lewagon {
+.navbar-brainz {
   justify-content: space-between;
-  background: white;
+  background: $purple;
+  border-radius: 40px;
+
+    .navbar-collapse {
+    flex-grow: 0;
+  }
+    .navbar-brand img {
+    width: 160px;
+  }
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+
+.nav-link {
+  color: white;
+  margin-right: 20px;
+  font-weight: 500;
+
+  &:hover {
+    color: $pink;
+  }
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.avatar {
+  width: 45px;
+}
+
+.dropdown-menu {
+  border-radius: 5px;
+  border: 1px solid $purple;
+
+  .dropdown-item {
+    color: $purple;
+  }
 }
