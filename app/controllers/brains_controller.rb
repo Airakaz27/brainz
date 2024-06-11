@@ -1,11 +1,12 @@
 class BrainsController < ApplicationController
-  before_action :set_brain, only: [:new, :show, :edit, :update, :destroy]
+  before_action :set_brain, only: [:show, :edit, :update, :destroy]
 
   def index
     @brains = Brain.all
   end
 
   def show
+    @user = current_user
   end
 
   def new
@@ -32,7 +33,7 @@ class BrainsController < ApplicationController
 
   def destroy
     @brain.destroy
-    redirect_to brains_path, status: :see_other
+    redirect_to user_path(current_user.id), status: :see_other
   end
 
   # private

@@ -10,36 +10,38 @@
       <div class="brains-list">
 
         <% @brains.each do |brain| %>
-          <h2><%= brain.name %></h2>
+          <div class="card brain-card">
+            <h2><%= brain.name %></h2>
 
-            <% if brain.photo.attached? %>
-              <%= cl_image_tag(brain.photo.key, width: 200, height: 200) %>
-            <% else %>
-              <img src="brainzImage.png" alt="">
-            <% end %>
+              <% if brain.photo.attached? %>
+                <%= cl_image_tag(brain.photo.key, width: 200, height: 200) %>
+              <% else %>
+                <img src="brainzImage.png" alt="">
+              <% end %>
 
-          <h3>QI</h3>
-          <p><%= brain.qi %></p>
+            <h3>QI</h3>
+            <p><%= brain.qi %></p>
 
-          <h3>Language(s)</h3>
-          <ul>
-            <% brain.languages.each do |language| %>
-              <li><%= language %></li>
-            <% end %>
-          </ul>
+            <h3>Language(s)</h3>
+            <ul>
+              <% brain.languages.each do |language| %>
+                <li><%= language %></li>
+              <% end %>
+            </ul>
 
-          <h3>Specialties</h3>
-          <ul>
-            <% brain.specialties.each do |speciality| %>
-              <li><%= speciality %></li>
-            <% end %>
-          </ul>
+            <h3>Specialties</h3>
+            <ul>
+              <% brain.specialties.each do |speciality| %>
+                <li><%= speciality %></li>
+              <% end %>
+            </ul>
 
-          <h3>Price / Day</h3>
-          <p><%= brain.price_per_day %> €</p>
+            <h3>Price / Day</h3>
+            <p><%= brain.price_per_day %> €</p>
 
-          <%= link_to "More infos", brain_path(brain) %>
-        <% end %>
+            <%= link_to "More infos", brain_path(brain) %>
+          <% end %>
+          </div>
       </div>
     </div>
   </div>
