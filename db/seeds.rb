@@ -7,3 +7,65 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+User.all.destroy
+Brain.all.destroy
+
+puts "creating users..."
+
+cyril = User.create(
+  first_name: "Cyril",
+  last_name: "d'Angelis",
+  pseudo: "Cyssou",
+  email: "cyrilleboss@gmail.com",
+  password: "cyril"
+)
+
+jeremy = User.create(
+  first_name: "Jeremy",
+  last_name: "Ziani",
+  pseudo: "ZiaJe",
+  email: "jejedu13@hotmail.fr",
+  password: "jeremy"
+)
+
+romane = User.create(
+  first_name: "Romane",
+  last_name: "Arvois",
+  pseudo: "Roro",
+  email: "romanechampagne@icloud.com",
+  password: "romane"
+)
+puts "end users"
+
+puts "creating brains..."
+
+Brain.create(
+  name: "Cyril",
+  qi: 8,
+  languages: ["French"],
+  specialties: ["Humor", "Artist Soul"],
+  price_per_day: 25,
+  user_id: cyril.id,
+  image: "app/assets/images/brainzImage.png"
+)
+
+Brain.create(
+  name: "Jeremy",
+  qi: 195,
+  languages: ["French", "English", "Spanish", "Mandarin"],
+  specialties: ["Dev Profil", "Eloquence"],
+  price_per_day: 307,
+  user_id: jeremy.id,
+  image: "app/assets/images/brainzImage.png"
+)
+
+Brain.create(
+  name: "Romane",
+  qi: 92,
+  languages: ["English", "Mandarin"],
+  specialties: ["Sporty Mindset", "Eloquence"],
+  price_per_day: 103,
+  user_id: romane.id,
+  image: "app/assets/images/brainzImage.png"
+)
+puts "end brains"
