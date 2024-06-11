@@ -8,4 +8,5 @@ class Brain < ApplicationRecord
   validates :price_per_day, presence: true
   validates :languages, inclusion: { in: ["French", "English", "Italian", "Mandarin", "Spanish"] }
   validates :specialties, inclusion: { in: ["Humor", "Eloquence", "Dev Profil", "Artist Soul", "Sporty Mindset"] }
+  validates :image, presence: true
 end
