@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1><%= @brain.name %></h1>
+
+      <% if @brain.photo.attached? %>
+        <%= cl_image_tag(@brain.photo.key, width: 200, height: 200) %>
+      <% else %>
+        <img src="brainzImage.png" alt="">
+      <% end %>
+
+      <h2>QI</h2>
+      <p><%= @brain.qi %></p>
+
+      <h2>Language(s)</h2>
+      <ul>
+        <% @brain.languages.each do |language| %>
+          <li><%= language %></li>
+        <% end %>
+      </ul>
+
+      <h2>Specialties</h2>
+      <ul>
+        <% @brain.specialties.each do |speciality| %>
+          <li><%= speciality %></li>
+        <% end %>
+      </ul>
+
+      <h2>Price / Day</h2>
+      <p><%= @brain.price_per_day %> €</p>
+
+      <% if @user.id == @brain.user_id %>
+        <%= link_to "Edit", edit_brain_path(@brain) %>
+        <%= link_to "Delete", brain_path(@brain), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+      <% end %>
+    </div>
+  </div>
+</div>
