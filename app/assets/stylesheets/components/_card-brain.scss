@@ -1,0 +1,98 @@
+.card-show {
+  margin-top: 40px;
+  border-radius: 20px;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+  width: 600px;
+  background-color: #f8f7f9;
+
+  img {
+    border-radius: 16px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+    margin: 15px;
+  }
+}
+
+.card-name-qi {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 25px;
+  color: $neutral-dark;
+
+  h2 {
+    font-family: "Montserrat Alternates";
+    font-size: 26px;
+    font-weight: 600;
+  }
+}
+
+.card-languages-specialties {
+  margin: 25px;
+  color: $neutral-dark;
+
+  h2 {
+    font-family: "Montserrat Alternates";
+    font-size: 26px;
+    font-weight: 500;
+  }
+
+  li {
+    font-size: 20px;
+  }
+
+}
+
+.price {
+  display: flex;
+  justify-content: end;
+  margin: 25px;
+  color: $purple;
+
+  h3 {
+    font-size: 30px;
+  }
+}
+
+.card-reviews {
+  margin-top: 40px;
+  border-radius: 20px;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+  width: 600px;
+  background-color: #f8f7f9;
+
+  h1 {
+    margin: 25px;
+    margin-bottom: 0;
+  }
+
+  .review {
+    margin: 25px;
+    padding-bottom: 15px;
+  }
+}
+
+.card-bookings {
+  width: 400px;
+  height: 400px;
+  position: sticky;
+  top: 40px;
+  margin-top: 40px;
+  border-radius: 20px;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+  background-color: #f8f7f9;
+
+  h1 {
+    margin: 25px;
+    text-align: center;
+  }
+}
+
+.total-price {
+  display: flex;
+  justify-content: end;
+
+  h3 {
+    text-align: end;
+    margin: 25px;
+    color: $purple;
+  }
+}
