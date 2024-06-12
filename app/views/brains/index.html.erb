@@ -1,8 +1,40 @@
 <div class="container">
-<<<<<<< HEAD
 
   <%= link_to "Connexion", new_user_session_path %>
   <%= button_to "Deconnexion", destroy_user_session_path, data: { turbo_method: :delete } %>
+
+
+  <div class="banner-brainz" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.shutterstock.com/image-illustration/cartoon-decorative-oil-painting-vibrant-260nw-1545321431.jpg);">
+    <div class="container">
+      <h1>Mind your business...</h1>
+      <h2>Rent a brain !</h2>
+    </div>
+  </div>
+
+  <div class="filter-bar">
+    <div class="category">
+      <i class="fa-solid fa-code"></i>
+      <p>Dev Profile</p>
+    </div>
+    <div class="category">
+      <i class="fa-regular fa-face-smile"></i>
+      <p>Humor</p>
+    </div>
+    <div class="category">
+      <i class="fa-solid fa-hands-clapping"></i>
+      <p>Eloquence</p>
+    </div>
+    <div class="category">
+      <i class="fa-solid fa-football"></i>
+      <p>Sporty Mindset</p>
+    </div>
+    <div class="category">
+      <i class="fa-solid fa-palette"></i>
+      <p>Artist Soul</p>
+    </div>
+    <div class="filters_button">
+    </div>
+  </div>
 
   <h1>All brains</h1>
   <div class="row">
@@ -46,45 +78,4 @@
       </div>
     </div>
   </div>
-=======
-  <div class="banner-brainz" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.shutterstock.com/image-illustration/cartoon-decorative-oil-painting-vibrant-260nw-1545321431.jpg);">
-    <div class="container">
-      <h1>Mind your business...</h1>
-      <h2>Rent a brain !</h2>
-    </div>
-  </div>
-
-  <div class="filter-bar">
-    <div class="category">
-      <i class="fa-solid fa-code"></i>
-      <p>Dev Profile</p>
-    </div>
-    <div class="category">
-      <i class="fa-regular fa-face-smile"></i>
-      <p>Humor</p>
-    </div>
-    <div class="category">
-      <i class="fa-solid fa-hands-clapping"></i>
-      <p>Eloquence</p>
-    </div>
-    <div class="category">
-      <i class="fa-solid fa-football"></i>
-      <p>Sporty Mindset</p>
-    </div>
-    <div class="category">
-      <i class="fa-solid fa-palette"></i>
-      <p>Artist Soul</p>
-    </div>
-    <div class="filters_button">
-    </div>
-  </div>
-
-  <div class="brains-list">
-    <% @brains.each do |brain| %>
-      <%= brain.name %>
-      <%= brain.name %>
-      <%= brain.name %>
-    <%end %>
-  </div>
->>>>>>> 5555ac70af98ae18d682b14b3827a482ad48acff
 </div>
