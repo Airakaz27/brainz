@@ -2,15 +2,20 @@
   <div class="row">
     <div class="col">
       <h1>Book this brain</h1>
-      <%= simple_form_for [@brain, @booking]  do |f| %>
-      <%= f.input :start_date,
-                  as: :string,
-                  input_html: { data: { controller: "datepicker", datepicker_date_value: @dates_booking}} %>
-      <%= f.input :end_date,
-                  as: :string,
-                  input_html: { data: { controller: "datepicker", datepicker_date_value: @dates_booking}} %>
-      <%= f.submit %>
-    <% end %>
+      <div data-controller="price-calculator">
+        <%= simple_form_for [@brain, @booking]  do |f| %>
+        <%= f.input :start_date,
+                    as: :string,
+                    input_html: { data: { controller: "datepicker", datepicker_date_value: @dates_booking, price_calculator_target: "start", action: "change->price-calculator#update"}} %>
+        <%= f.input :end_date,
+                    as: :string,
+                    input_html: { data: { controller: "datepicker", datepicker_date_value: @dates_booking, price_calculator_target: "end"}} %>
+        <%= f.submit %>
+      <% end %>
+      <div>
+        <p data-price-calculator-target="total"></p>
+      </div>
+      </div>
     </div>
   </div>
 </div>
