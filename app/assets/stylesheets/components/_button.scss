@@ -1,14 +1,19 @@
 
-.btn-ghost {
-  color: $purple;
-  border: 1px solid $purple;
-  padding: 8px 24px;
-  border-radius: 50px;
-  font-weight: lighter;
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
-}
+.book-button {
+  display: flex;
+  justify-content: center;
 
-.btn-ghost:hover {
-  opacity: 1;
+  .btn-ghost {
+    color: $purple;
+    border: 1px solid $purple;
+    padding: 8px 24px;
+    border-radius: 50px;
+    font-weight: lighter;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+  }
+
+  .btn-ghost:hover {
+    opacity: 1;
+  }
 }
