@@ -7,8 +7,8 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-User.all.destroy
-Brain.all.destroy
+User.destroy_all
+Brain.destroy_all
 
 puts "creating users..."
 
@@ -17,7 +17,7 @@ cyril = User.create(
   last_name: "d'Angelis",
   pseudo: "Cyssou",
   email: "cyrilleboss@gmail.com",
-  password: "cyril"
+  password: "cyrilll"
 )
 
 jeremy = User.create(
@@ -46,17 +46,17 @@ Brain.create(
   specialties: ["Humor", "Artist Soul"],
   price_per_day: 25,
   user_id: cyril.id,
-  image: "app/assets/images/brainzImage.png"
+  image: "brainzImage.png"
 )
 
 Brain.create(
   name: "Jeremy",
-  qi: 195,
+  qi: 180,
   languages: ["French", "English", "Spanish", "Mandarin"],
   specialties: ["Dev Profil", "Eloquence"],
   price_per_day: 307,
   user_id: jeremy.id,
-  image: "app/assets/images/brainzImage.png"
+  image: "brainzImage.png"
 )
 
 Brain.create(
@@ -66,6 +66,6 @@ Brain.create(
   specialties: ["Sporty Mindset", "Eloquence"],
   price_per_day: 103,
   user_id: romane.id,
-  image: "app/assets/images/brainzImage.png"
+  image: "brainzImage.png"
 )
 puts "end brains"
