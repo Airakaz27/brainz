@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def show
     @brains = Brain.where(user_id: current_user.id)
+    @bookings = Booking.where(user_id: current_user.id)
   end
 
   private
