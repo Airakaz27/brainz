@@ -2,6 +2,9 @@
   padding: 30px;
   border: 1px solid rgba(23, 23, 23, 0.2);
   border-radius: 20px;
+  background-color: $white;
+  box-shadow: 4px 4px 1px 1px $neutral-dark;
+
 
   &__title {
     font-size: 14px;
@@ -56,6 +59,8 @@
     padding: 8px;
     border-radius: 10px;
     background-color: $pink;
+  }
+}
 
 .card-show {
   padding: 20px;
