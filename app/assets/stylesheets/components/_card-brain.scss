@@ -1,3 +1,62 @@
+.card-index {
+  padding: 30px;
+  border: 1px solid rgba(23, 23, 23, 0.2);
+  border-radius: 20px;
+
+  &__title {
+    font-size: 14px;
+    font-family: $body-font;
+    font-weight: 400;
+    color: $neutral-dark;
+  }
+
+  &__text, &__text-price {
+    font-weight: 700;
+    color: $neutral-dark;
+  }
+
+  &__text-QI {
+    font-size: 22px;
+    font-weight: 700;
+    font-family: $body-font;
+    color: $neutral-dark;
+  }
+
+  &__name {
+    font-size: 50px;
+    color: $neutral-dark;
+  }
+}
+
+.container-image {
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    transition: transform 0.3s ease;
+  }
+
+  .qi {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    top: 20px;
+    left: 20px;
+    padding: 8px;
+    border-radius: 10px;
+    background-color: $pink;
+
 .card-show {
   padding: 20px;
   border-radius: 20px;
