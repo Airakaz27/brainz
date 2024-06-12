@@ -1,0 +1,172 @@
+.card-index {
+  padding: 30px;
+  border: 1px solid rgba(23, 23, 23, 0.2);
+  border-radius: 20px;
+  background-color: #f8f7f9;
+  box-shadow: 4px 4px 1px 1px $neutral-dark;
+
+  &__title {
+    font-size: 14px;
+    font-family: $body-font;
+    font-weight: 400;
+    color: $neutral-dark;
+  }
+
+  &__text, &__text-price {
+    font-weight: 700;
+    color: $neutral-dark;
+  }
+
+  &__text-QI {
+    font-size: 22px;
+    font-weight: 700;
+    font-family: $body-font;
+    color: $neutral-dark;
+  }
+
+  &__name {
+    font-size: 50px;
+    color: $neutral-dark;
+  }
+}
+
+.container-image {
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    transition: transform 0.3s ease;
+  }
+
+  .qi {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    top: 20px;
+    left: 20px;
+    padding: 8px;
+    border-radius: 10px;
+    background-color: $pink;
+  }
+}
+
+.card-show {
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid $neutral-dark;
+  box-shadow: 4px 4px 1px 1px $neutral-dark;
+  width: 600px;
+  background-color: #f8f7f9;
+}
+
+.card-brain-img-show {
+  height: 280px;
+  overflow: hidden;
+  margin-bottom: 15px;
+
+  img {
+    border-radius: 16px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+    height: auto;
+    width: 100%;
+  }
+}
+
+.card-brain-infos {
+  padding: 25px;
+}
+
+.card-name-qi {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  color: $neutral-dark;
+
+  h2 {
+    font-family: "Montserrat Alternates";
+    font-size: 26px;
+    font-weight: 600;
+  }
+}
+
+.card-languages-specialties {
+  color: $neutral-dark;
+
+  h2 {
+    font-family: "Montserrat Alternates";
+    font-size: 26px;
+    font-weight: 500;
+  }
+
+  li {
+    font-size: 20px;
+  }
+
+}
+
+.price {
+  display: flex;
+  justify-content: end;
+  color: $purple;
+
+  h3 {
+    font-size: 30px;
+  }
+}
+
+.card-reviews {
+  margin-top: 40px;
+  border-radius: 20px;
+  border: 1px solid $neutral-dark;
+  box-shadow: 4px 4px 1px 1px $neutral-dark;
+  width: 600px;
+  background-color: #f8f7f9;
+
+  h1 {
+    margin: 25px;
+    margin-bottom: 0;
+  }
+
+  .review {
+    margin: 25px;
+    padding-bottom: 15px;
+  }
+}
+
+.card-bookings {
+  width: 400px;
+  height: 400px;
+  position: sticky;
+  top: 40px;
+  border-radius: 20px;
+  border: 1px solid $neutral-dark;
+  box-shadow: 4px 4px 1px 1px $neutral-dark;
+  background-color: #f8f7f9;
+
+  h1 {
+    padding: 25px;
+    text-align: center;
+  }
+}
+
+.total-price {
+  display: flex;
+  justify-content: end;
+
+  h3 {
+    text-align: end;
+    padding: 25px;
+    color: $purple;
+  }
+}
