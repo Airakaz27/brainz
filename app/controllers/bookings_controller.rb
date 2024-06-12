@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_brain, only: [:show, :new, :create]
+  before_action :set_brain, only: [:show, :new, :create, :destroy]
   before_action :set_user, only: [:show, :new, :create]
 
   def show
@@ -22,6 +22,13 @@ class BookingsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.brain_id = @brain.id
+    @booking.destroy
+    redirect_to user_path(current_user.id), status: :see_other
   end
 
   private
