@@ -49,6 +49,7 @@
 
   <div class="grid__cards mb-5">
     <% @brains.each do |brain| %>
+        <%= link_to brain_path(brain) do %>
         <div class="card-index">
           <div class="container-image mb-3">
             <% if brain.photo.attached? %>
@@ -86,5 +87,6 @@
           </div>
         </div>
     <% end %>
+  <% end %>
   </div>
 </div>
