@@ -2,6 +2,9 @@
   padding: 30px;
   border: 1px solid rgba(23, 23, 23, 0.2);
   border-radius: 20px;
+  background-color: $white;
+  box-shadow: 4px 4px 1px 1px $neutral-dark;
+
 
   &__title {
     font-size: 14px;
@@ -65,7 +68,7 @@
   border: 1px solid $neutral-dark;
   box-shadow: 4px 4px 1px 1px $neutral-dark;
   width: 600px;
-  background-color: #f8f7f9;
+  background-color: $white;
 }
 
 .card-brain-img-show {
@@ -94,9 +97,20 @@
   h2 {
     font-family: "Montserrat Alternates";
     font-size: 26px;
-    font-weight: 600;
+    font-weight: 500;
   }
 }
+
+.qi {
+  display: flex;
+  justify-content: space-between;
+
+  .qi-value {
+    font-weight: 700;
+    padding-left: 15px;
+  }
+}
+
 
 .card-languages-specialties {
   color: $neutral-dark;
@@ -124,12 +138,12 @@
 }
 
 .card-reviews {
-  margin-top: 40px;
+  margin: 40px 0;
   border-radius: 20px;
   border: 1px solid $neutral-dark;
   box-shadow: 4px 4px 1px 1px $neutral-dark;
   width: 600px;
-  background-color: #f8f7f9;
+  background-color: $white;
 
   h1 {
     margin: 25px;
@@ -144,13 +158,13 @@
 
 .card-bookings {
   width: 400px;
-  height: 400px;
+  height: 450px;
   position: sticky;
   top: 40px;
   border-radius: 20px;
   border: 1px solid $neutral-dark;
   box-shadow: 4px 4px 1px 1px $neutral-dark;
-  background-color: #f8f7f9;
+  background-color: $white;
 
   h1 {
     padding: 25px;

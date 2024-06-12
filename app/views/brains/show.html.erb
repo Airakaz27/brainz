@@ -16,7 +16,10 @@
             <div class="card-brain-infos">
               <div class="card-name-qi">
                 <h1><%= @brain.name %></h1>
-                <h2>QI : <%= @brain.qi %></h2>
+                <div class="qi">
+                  <h2>QI : </h2>
+                  <h2 class="qi-value"><%= @brain.qi %></h2>
+                </div>
               </div>
 
               <div class="card-languages-specialties">
@@ -36,7 +39,6 @@
               </div>
 
               <div class="price">
-                <%# <h2>Price / Day</h2> %>
                 <h3><%= @brain.price_per_day %> $</h3>
               </div>
             </div>
@@ -52,7 +54,23 @@
         </div>
 
         <div class="card-bookings">
-          <h1>Bookings</h1>
+          <h1>Book your brain !</h1>
+          <div class="booking-form">
+            <%= simple_form_for [@brain, @booking]  do |f| %>
+              <%= f.input :start_date,
+                          as: :string,
+                          input_html: { data: { controller: "datepicker"}} %>
+              <%= f.input :end_date,
+                          as: :string,
+                          input_html: { data: { controller: "datepicker"}} %>
+              <div class="book-button">
+                <%= f.submit "Book Me", class: "btn btn-ghost"%>
+              </div>
+            <% end %>
+
+              <%# <%= link_to "Book Me", new_brain_booking_path(@brain), class: "btn btn-ghost" %>
+
+          </div>
           <div class="total-price">
             <h3>Total price : $</h3>
           </div>
@@ -60,10 +78,10 @@
 
       </div>
 
-      <%# <% if @user.id == @brain.user_id %> %> %>
-        <%# <%= link_to "Edit", edit_brain_path(@brain) %> %>
-        <%# <%= link_to "Delete", brain_path(@brain), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %> %>
-      <%# <% end %> %>
+      <%# <% if @user.id == @brain.user_id %>
+        <%# <%= link_to "Edit", edit_brain_path(@brain) %>
+        <%# <%= link_to "Delete", brain_path(@brain), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+      <%# <% end %>
     </div>
   </div>
 </div>
