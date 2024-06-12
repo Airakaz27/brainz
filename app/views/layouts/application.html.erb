@@ -19,7 +19,7 @@
 
   <body>
   <div class="container">
-    <div class="navbar navbar-expand-sm navbar-light navbar-brainz">
+    <div class="navbar navbar-expand-sm navbar-light navbar-brainz mb-5">
       <div class="container-fluid">
         <%= link_to brains_path, class: "navbar-brand" do%>
           <%= image_tag "brainz-logo-final.png" %>
@@ -31,8 +31,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto">
               <li class="nav-item">
-                <%# <a class="nav-link" href="#">Log in</a> %>
-                <%= link_to "Log in", new_user_session_path %>
+                <%= link_to "Log in", new_user_session_path, class:"nav-link" %>
               </li>
               <li class="nav-item dropdown">
                 <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />

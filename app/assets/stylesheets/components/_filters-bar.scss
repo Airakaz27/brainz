@@ -3,14 +3,12 @@
   gap: 30px;
   justify-content: center;
   align-items: center;
-  max-width: 700px;
-  border: 1px solid rgba(23, 23, 23, 0.2);
+  max-width: 850px;
   width: 100%;
-  border-radius: 40px;
-  padding: 16px;
 
   &__category {
     text-align: center;
+    flex: 1;
   }
 
   &__icon {
@@ -19,6 +17,7 @@
 
   &__text {
     color: $neutral-light;
+    font-size: 14px;
   }
 }
 
