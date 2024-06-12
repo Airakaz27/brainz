@@ -1,1 +1,7 @@
 // Specific CSS for your home-page
+.grid__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: auto;
+  gap: 100px;
+}

@@ -1,34 +1,48 @@
 <div class="container">
 
-  <div class="banner-brainz" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.shutterstock.com/image-illustration/cartoon-decorative-oil-painting-vibrant-260nw-1545321431.jpg);">
+  <div class="banner-brainz mb-5" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path("backgroundbanner.jpg")%>);">
     <div class="container">
       <h1>Mind your business...</h1>
-      <h2>Rent a brain !</h2>
+      <h2>Rent a brain!</h2>
     </div>
   </div>
 
-  <div class="filter-bar">
-    <div class="category">
-      <i class="fa-solid fa-code"></i>
-      <p>Dev Profile</p>
-    </div>
-    <div class="category">
-      <i class="fa-regular fa-face-smile"></i>
-      <p>Humor</p>
-    </div>
-    <div class="category">
-      <i class="fa-solid fa-hands-clapping"></i>
-      <p>Eloquence</p>
-    </div>
-    <div class="category">
-      <i class="fa-solid fa-football"></i>
-      <p>Sporty Mindset</p>
-    </div>
-    <div class="category">
-      <i class="fa-solid fa-palette"></i>
-      <p>Artist Soul</p>
-    </div>
-    <div class="filters_button">
+  <div class='d-flex justify-content-center mb-5'>
+    <div class="filters-bar">
+      <div class="filters-bar__category">
+        <a href="">
+          <i class="filters-bar__icon fa-solid fa-code"></i>
+          <div class="filters-bar__text">Dev Profile</div>
+        </a>
+      </div>
+      <div class="filters-bar__category">
+        <a href="">
+          <i class="filters-bar__icon fa-regular fa-face-smile"></i>
+          <div class="filters-bar__text">Humor</div>
+        </a>
+      </div>
+      <div class="filters-bar__category">
+        <a href="">
+          <i class="filters-bar__icon fa-solid fa-hands-clapping"></i>
+          <div class="filters-bar__text">Eloquence</div>
+        </a>
+      </div>
+      <div class="filters-bar__category">
+        <a href="">
+          <i class="filters-bar__icon fa-solid fa-football"></i>
+          <div class="filters-bar__text">Sporty Mindset</div>
+        </a>
+      </div>
+      <div class="filters-bar__category">
+        <a href="">
+          <i class="filters-bar__icon fa-solid fa-palette"></i>
+          <div class="filters-bar__text">Artist Soul</div>
+        </a>
+      </div>
+      <button class="filter-button d-flex align-items-center gap-2">
+        <%= image_tag("filtre-horizontal", alt: "filter", width: 25) %>
+          <div>Filters</div>
+      </button>
     </div>
   </div>
 

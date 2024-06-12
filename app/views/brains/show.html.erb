@@ -1,38 +1,69 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <h1><%= @brain.name %></h1>
+      <div class="show-brain">
 
-      <% if @brain.photo.attached? %>
-        <%= cl_image_tag(@brain.photo.key, width: 200, height: 200) %>
-      <% else %>
-        <img src="brainzImage.png" alt="">
-      <% end %>
+        <div class="brain-infos">
+          <div class="card-show">
+            <div class="card-brain-img-show">
+              <% if @brain.photo.attached? %>
+                <%= cl_image_tag(@brain.photo.key, width: 280) %>
+              <% else %>
+                <%= image_tag "brainz-card-cyril.png", width: 280 %>
+              <% end %>
+            </div>
 
-      <h2>QI</h2>
-      <p><%= @brain.qi %></p>
+            <div class="card-brain-infos">
+              <div class="card-name-qi">
+                <h1><%= @brain.name %></h1>
+                <h2>QI : <%= @brain.qi %></h2>
+              </div>
 
-      <h2>Language(s)</h2>
-      <ul>
-        <% @brain.languages.each do |language| %>
-          <li><%= language %></li>
-        <% end %>
-      </ul>
+              <div class="card-languages-specialties">
+                <h2>Language(s)</h2>
+                <ul>
+                  <% @brain.languages.each do |language| %>
+                    <li><%= language %></li>
+                  <% end %>
+                </ul>
 
-      <h2>Specialties</h2>
-      <ul>
-        <% @brain.specialties.each do |speciality| %>
-          <li><%= speciality %></li>
-        <% end %>
-      </ul>
+                <h2>Specialties</h2>
+                <ul>
+                  <% @brain.specialties.each do |speciality| %>
+                    <li><%= speciality %></li>
+                  <% end %>
+                </ul>
+              </div>
 
-      <h2>Price / Day</h2>
-      <p><%= @brain.price_per_day %> €</p>
+              <div class="price">
+                <%# <h2>Price / Day</h2> %>
+                <h3><%= @brain.price_per_day %> $</h3>
+              </div>
+            </div>
+          </div>
 
-      <% if @user.id == @brain.user_id %>
-        <%= link_to "Edit", edit_brain_path(@brain) %>
-        <%= link_to "Delete", brain_path(@brain), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-      <% end %>
+          <div class="card-reviews">
+            <h1>Reviews</h1>
+            <div class="review">
+              <p><i class="fa-solid fa-star" style="color: #FFD43B;"></i><i class="fa-regular fa-star" style="color: #FFD43B;"></i><i class="fa-regular fa-star" style="color: #FFD43B;"></i><i class="fa-regular fa-star" style="color: #FFD43B;"></i><i class="fa-regular fa-star" style="color: #FFD43B;"></i></p>
+              <p><i class="fa-solid fa-quote-left" style="color: #6931AB;"></i> J'aurai probablement dû garder le mien !</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-bookings">
+          <h1>Bookings</h1>
+          <div class="total-price">
+            <h3>Total price : $</h3>
+          </div>
+        </div>
+
+      </div>
+
+      <%# <% if @user.id == @brain.user_id %> %> %>
+        <%# <%= link_to "Edit", edit_brain_path(@brain) %> %>
+        <%# <%= link_to "Delete", brain_path(@brain), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %> %>
+      <%# <% end %> %>
     </div>
   </div>
 </div>
