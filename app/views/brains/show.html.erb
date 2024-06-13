@@ -78,9 +78,11 @@
 
       </div>
 
-      <% if @user.id == @brain.user_id %>
-        <%= link_to "Edit", edit_brain_path(@brain) %>
-        <%= link_to "Delete", brain_path(@brain), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+      <% if current_user%>
+        <% if @user.id == @brain.user_id %>
+          <%= link_to "Edit", edit_brain_path(@brain) %>
+          <%= link_to "Delete", brain_path(@brain), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+        <% end %>
       <% end %>
     </div>
   </div>
