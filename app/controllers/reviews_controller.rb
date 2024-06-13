@@ -2,7 +2,11 @@ class ReviewsController < ApplicationController
   before_action :set_brain, only: [:new, :create]
 
   def new
-    @review = Review.new(brain_id: @brain.id)
+    if current_user
+      @review = Review.new(brain_id: @brain.id)
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def create
