@@ -1,13 +1,10 @@
 .card-index {
-  padding: 30px;
-  border: 1px solid rgba(23, 23, 23, 0.2);
-  border-radius: 20px;
-  background-color: $white;
-  box-shadow: 4px 4px 1px 1px $neutral-dark;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 95%;
+    padding: 20px;
+    border: 1px solid rgba(23, 23, 23, 0.2);
+    border-radius: 20px;
+    background-color: $white;
+    box-shadow: 4px 4px 1px 1px $neutral-dark;
+    height: 100%;
 
 
   &__title {
@@ -20,6 +17,8 @@
   &__text, &__text-price {
     font-weight: 700;
     color: $neutral-dark;
+    font-size: 14px;
+    margin-left: 7px;
   }
 
   &__text-QI {
@@ -30,9 +29,15 @@
   }
 
   &__name {
-    font-size: 50px;
+    font-size: 40px;
     color: $neutral-dark;
   }
+}
+
+.card-infos {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .container-image {

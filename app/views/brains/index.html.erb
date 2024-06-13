@@ -46,7 +46,7 @@
     </div>
   </div>
 
-  <div class="d-flex">
+  <div class="main-container d-flex">
     <div class="filters__sidebar">
       <%= simple_form_for :filter, url: brains_path, method: :get do |f| %>
         <%= f.input :qi, label: "QI min", input_html: { class: "form-control" } %>
@@ -56,46 +56,53 @@
         <%= f.submit 'Filter' %>
       <% end %>
     </div>
-    <div class="grid__cards mb-5">
-      <% @brains.each do |brain| %>
-        <%= link_to brain_path(brain) do %>
-          <div class="card-index">
-            <div class="container-image mb-3">
-              <% if brain.photo.attached? %>
-                <%= cl_image_tag(brain.photo.key) %>
-              <% else %>
-                <%= image_tag("brainzImage.png", alt: "Brain Image") %>
-              <% end %>
-              <div class="qi">
-                <div class="card-index__title">QI:</div>
-                <div class="card-index__text-QI"><%= brain.qi %></div>
+    <div class="content">
+  <div class="grid__cards mb-5">
+    <% @brains.each do |brain| %>
+      <%= link_to brain_path(brain) do %>
+        <div class="card-index">
+          <div class="container-image mb-3">
+            <% if brain.photo.attached? %>
+              <%= cl_image_tag(brain.photo.key) %>
+            <% else %>
+              <%= image_tag("brainzImage.png", alt: "Brain Image") %>
+            <% end %>
+            <div class="qi">
+              <div class="card-index__title">QI:</div>
+              <div class="card-index__text-QI"><%= brain.qi %></div>
+            </div>
+          </div>
+          <div class="card-infos">
+            <div class="card-infos__attributes">
+              <h2 class="card-index__name mb-3"><%= brain.name %></h2>
+
+              <div class="d-flex align-items-start">
+                <h3 class="card-index__title">Language(s):</h3>
+                <div>
+                  <% brain.languages.each do |language| %>
+                    <p class="card-index__text"><%= language %></p>
+                  <% end %>
+                </div>
+              </div>
+              <div class="d-flex align-items-start">
+                <h3 class="card-index__title">Specialties:</h3>
+                <div>
+                  <% brain.specialties.each do |specialty| %>
+                    <p class="card-index__text"><%= specialty %></p>
+                  <% end %>
+                </div>
               </div>
             </div>
-
-            <h2 class="card-index__name mb-3"><%= brain.name %></h2>
-
-            <div class="d-flex">
-              <h3 class="card-index__title">Language(s)</h3>
-              <ul>
-                <% brain.languages.each do |language| %>
-                  <li class="card-index__text"><%= language %></li>
-                <% end %>
-              </ul>
-            </div>
-            <div class="d-flex">
-              <h3 class="card-index__title">Specialties</h3>
-              <ul>
-                <% brain.specialties.each do |specialty| %>
-                  <li class="card-index__text"><%= specialty %></li>
-                <% end %>
-              </ul>
-            </div>
-            <div class="d-flex flex-column">
-              <h3 class="card-index__title">Price / Day</h3>
+            <div class="d-flex flex-column mt-auto">
+              <h3 class="card-index__title">Price / Day:</h3>
               <div class="card-index__text-price"><%= brain.price_per_day %> €</div>
             </div>
           </div>
-        <% end %>
+        </div>
       <% end %>
+    <% end %>
+  </div>
+</div>
+
     </div>
   </div>
