@@ -8,6 +8,7 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 Booking.destroy_all
+Review.destroy_all
 User.destroy_all
 Brain.destroy_all
 
@@ -40,7 +41,7 @@ puts "end users"
 
 puts "creating brains..."
 
-Brain.create(
+cyrilbrain = Brain.create(
   name: "Cyril",
   qi: 8,
   languages: ["French"],
@@ -60,7 +61,7 @@ Brain.create(
   image: "brainzImage.png"
 )
 
-Brain.create(
+romanebrain = Brain.create(
   name: "Romane",
   qi: 92,
   languages: ["English", "Mandarin"],
@@ -70,3 +71,19 @@ Brain.create(
   image: "brainzImage.png"
 )
 puts "end brains"
+
+puts "create reviews"
+
+Review.create(
+  comment: "Pas d'une grande utilité pendant les examens mais son humour m'a permis de séduire une des membres du jury",
+  rating: 1,
+  brain_id: cyrilbrain.id
+)
+
+Review.create(
+  comment: "Grâce à ses connaissances en Champagne, je suis aujourd'hui Product Manager de la Maison Moët et Chandon",
+  rating: 2,
+  brain_id: romanebrain.id
+)
+
+puts "end reviews"
