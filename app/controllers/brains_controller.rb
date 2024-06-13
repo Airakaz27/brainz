@@ -41,7 +41,7 @@ class BrainsController < ApplicationController
   private
 
   def brain_params
-    params.require(:brain).permit(:photo, :name, :qi, :languages, :specialties, :price_per_day)
+    params.require(:brain).permit(:photo, :name, :qi, :price_per_day, languages: [], specialties: [])
   end
 
   def set_brain
