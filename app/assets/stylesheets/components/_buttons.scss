@@ -11,3 +11,14 @@
     background-color: #f0f0f0;
     border: 1px solid rgba(23, 23, 23, 0.5);
   }
+
+.filter__btn {
+  display: block;
+  width: 100%;
+  background-color: $pink;
+  border: 1px solid $neutral-dark;
+  box-shadow: 4px 4px 1px 1px $neutral-dark;
+  border-radius: 4px;
+  padding: 7px;
+  font-weight: 500;
+}

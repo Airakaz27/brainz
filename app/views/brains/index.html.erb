@@ -46,16 +46,27 @@
     </div>
   </div>
 
-  <div class="main-container d-flex">
-    <div class="filters__sidebar">
-      <%= simple_form_for :filter, url: brains_path, method: :get do |f| %>
-        <%= f.input :qi, label: "QI min", input_html: { class: "form-control" } %>
-        <%= f.input :languages, collection: Brain::LANGUAGES, multiple: true, as: :check_boxes, include_hidden: false, input_html: { class: "form-control" } %>
-        <%= f.input :specialties, collection: Brain::SPECIALTIES, multiple: true, as: :check_boxes, include_hidden: false, input_html: { class: "form-control" } %>
-        <%= f.input :price_per_day %>
-        <%= f.submit 'Filter' %>
-      <% end %>
+  <div class="main-container d-flex positiobn-relative mb-5">
+    <div class="filters__sidebar bg-light p-5">
+  <%= simple_form_for :filter, url: brains_path, method: :get do |f| %>
+    <div class="mb-3">
+      <%= f.input :qi, label: "QI min", input_html: { class: "form-control" } %>
     </div>
+    <div class="mb-3">
+      <%= f.input :languages, collection: Brain::LANGUAGES, multiple: true, as: :check_boxes, include_hidden: false, class: "form-check-input" %>
+    </div>
+    <div class="mb-3">
+      <%= f.input :specialties, collection: Brain::SPECIALTIES, multiple: true, as: :check_boxes, include_hidden: false, input_html: { class: "form-check-input" } %>
+    </div>
+    <div class="mb-3">
+      <%= f.input :price_per_day, label: "Price Max", input_html: { class: "form-control"} %>
+    </div>
+    <div class="text-end">
+      <%= f.submit 'Filter', class: "filter__btn" %>
+    </div>
+  <% end %>
+</div>
+
     <div class="content">
   <div class="grid__cards mb-5">
     <% @brains.each do |brain| %>
@@ -93,16 +104,17 @@
                 </div>
               </div>
             </div>
-            <div class="d-flex flex-column mt-auto">
-              <h3 class="card-index__title">Price / Day:</h3>
-              <div class="card-index__text-price"><%= brain.price_per_day %> €</div>
-            </div>
+          </div>
+          <div>
+            <h3 class="card-index__title">Price / Day:</h3>
+            <div class="card-index__text-price"><%= brain.price_per_day %> €</div>
           </div>
         </div>
       <% end %>
     <% end %>
   </div>
 </div>
+
 
     </div>
   </div>
