@@ -61,11 +61,17 @@
         <h2>All my bookings</h2>
         <div class="card-booking">
           <% @bookings.each do |booking| %>
-            <h3><%= booking.brain.name %></h3>
-            <p>Start date : <%= booking.start_date %></p>
-            <p>End date : <%= booking.end_date %></p>
-            <%= link_to "Cancel", brain_booking_path(booking.brain_id, booking) , class: "btn btn-ghost", data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-          <% end %>
+            <div class="card-booking-infos">
+              <h3><%= booking.brain.name %></h3>
+              <div class="booking-date">
+                <p><strong>Start date :  </strong><%= booking.start_date %></p>
+                <p><strong>End date :  </strong><%= booking.end_date %></p>
+              </div>
+              <div class="cancel-booking">
+                <%= link_to "Cancel", brain_booking_path(booking.brain_id, booking) , class: "btn filter__btn", data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+              </div>
+              <% end %>
+            </div>
         </div>
       </div>
 
