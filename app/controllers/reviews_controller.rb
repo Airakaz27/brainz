@@ -2,6 +2,7 @@ class ReviewsController < ApplicationController
   before_action :set_brain, only: [:new, :create]
 
   def new
+    if current_user
     @review = Review.new(brain_id: @brain.id)
   end
 
