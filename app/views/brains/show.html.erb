@@ -5,12 +5,21 @@
 
         <div class="brain-infos">
           <div class="card-show">
-            <div class="card-brain-img-show">
-              <% if @brain.photo.attached? %>
-                <%= cl_image_tag(@brain.photo.key, width: 280) %>
-              <% else %>
-                <%= image_tag "brainz-card-cyril.png", width: 280 %>
-              <% end %>
+            <div class="delete-on-image">
+              <div class="card-brain-img-show">
+                <% if @brain.photo.attached? %>
+                  <%= cl_image_tag(@brain.photo.key, width: 280) %>
+                <% else %>
+                  <%= image_tag "brainz-card-cyril.png", width: 280 %>
+                <% end %>
+              </div>
+              <div class="delete">
+                <% if @user.id == @brain.user_id %>
+                  <%= link_to brain_path(@brain), class: "btn btn-delete", data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} do%>
+                    <i class="fa-solid fa-xmark" style="color: #322A3D;"></i>
+                  <% end %>
+                <% end %>
+              </div>
             </div>
 
             <div class="card-brain-infos">
@@ -45,7 +54,7 @@
               <div class="edit">
                 <% if @user.id == @brain.user_id %>
                   <%= link_to "Edit your brain", edit_brain_path(@brain), class: "btn btn-ghost"%>
-                  <%= link_to "Delete", brain_path(@brain), class: "btn btn-ghost", data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+
                 <% end %>
               </div>
             </div>
