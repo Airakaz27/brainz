@@ -22,3 +22,13 @@
   padding: 7px;
   font-weight: 500;
 }
+
+.main-button {
+  background-color: $purple;
+  border: 1px solid $neutral-dark;
+  box-shadow: 4px 4px 1px 1px $neutral-dark;
+  border-radius: 4px;
+  padding: 7px 18px;
+  font-weight: 500;
+  color: $white;
+}
