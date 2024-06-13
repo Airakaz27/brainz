@@ -6,6 +6,7 @@ class BrainsController < ApplicationController
   end
 
   def show
+    @reviews = Review.where(brain_id: @brain.id)
     @user = current_user
     @booking = Booking.new
     @price = @brain.price_per_day
