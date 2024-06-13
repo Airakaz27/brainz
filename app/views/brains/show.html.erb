@@ -71,25 +71,38 @@
         <div class="card-bookings">
           <h1>Book your brain !</h1>
           <div class="booking-form">
-            <%= simple_form_for [@brain, @booking]  do |f| %>
-              <%= f.input :start_date,
-                          as: :string,
-                          input_html: { data: { controller: "datepicker"}} %>
-              <%= f.input :end_date,
-                          as: :string,
-                          input_html: { data: { controller: "datepicker"}} %>
-              <div class="book-button">
-                <%= f.submit "Book Me", class: "btn btn-ghost"%>
-              </div>
-            <% end %>
+
+            <div data-controller="price-calculator" data-price-calculator-priceperday-value=<%= @price %>>
+              <%= simple_form_for [@brain, @booking]  do |f| %>
+                <%= f.input :start_date,
+                            as: :string,
+                            input_html: { data: { controller: "datepicker", datepicker_date_value: @dates_booking, price_calculator_target: "start", action: "change->price-calculator#update"}} %>
+                <%= f.input :end_date,
+                            as: :string,
+                            input_html: { data: { controller: "datepicker", datepicker_date_value: @dates_booking, price_calculator_target: "end", action: "change->price-calculator#update"}} %>
+                <div class="book-button">
+                  <%= f.submit "Book Me", class: "btn btn-ghost"%>
+                </div>
+              <% end %>
+            <div class="total-price">
+              <h3>Total price : $</h3>
+              <p data-price-calculator-target="total"></p>
+            </div>
+            </div>
 
           </div>
-          <div class="total-price">
-            <h3>Total price : $</h3>
-          </div>
+
         </div>
 
       </div>
+      
+      <% if current_user%>
+        <% if @user.id == @brain.user_id %>
+          <%= link_to "Edit", edit_brain_path(@brain) %>
+          <%= link_to "Delete", brain_path(@brain), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+        <% end %>
+      <% end %>
+
     </div>
   </div>
 </div>

@@ -8,6 +8,7 @@ class BrainsController < ApplicationController
   def show
     @user = current_user
     @booking = Booking.new
+    @price = @brain.price_per_day
   end
 
   def new
@@ -33,14 +34,15 @@ class BrainsController < ApplicationController
   end
 
   def destroy
+    @user = current_user
     @brain.destroy
-    redirect_to user_path(current_user.id), status: :see_other
+    redirect_to user_path(@user.id), status: :see_other
   end
 
   private
 
   def brain_params
-    params.require(:brain).permit(:photo, :name, :qi, :languages, :specialties, :price_per_day)
+    params.require(:brain).permit(:photo, :name, :qi, :price_per_day, languages: [], specialties: [])
   end
 
   def set_brain
