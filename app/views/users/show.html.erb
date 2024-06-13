@@ -1,18 +1,17 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <div>
-        <h1>
-          <%= @user.first_name %> <%= @user.last_name %>
-        </h1>
-        <%= link_to "Edit my profile", edit_user_registration_path(@user) %>
-        <%= link_to "Delete my profile", cancel_user_registration_path, data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-
+      <div class="username">
+        <h2>
+          Welcome <%= @user.first_name %> <%= @user.last_name %> !
+        </h2>
+        <%= link_to "Edit my profile", edit_user_registration_path(@user), class: "btn btn-ghost" %>
       </div>
 
+      <div class="card-brain-dashboard">
         <h2>All my brains</h2>
         <% @brains.each do |brain| %>
-          <div class="card">
+          <div class="card-infos">
             <h3><%= brain.name %></h3>
 
               <% if brain.photo.attached? %>
@@ -40,21 +39,26 @@
             <p>Price / Day:<%= brain.price_per_day %> €</p>
 
             <%= link_to "More infos", brain_path(brain) %>
-          </div>
-        <% end %>
-      <%= link_to "Add a brain", new_brain_path %>
+            <%= link_to "Add a brain", new_brain_path %>
+          <% end %>
+        </div>
+      </div>
 
-      <hr>
+      <div class="card-bookings-dashboard">
+        <h2>All my bookings</h2>
+        <div class="card-booking">
+          <% @bookings.each do |booking| %>
+            <h3><%= booking.brain.name %></h3>
+            <p>Start date : <%= booking.start_date %></p>
+            <p>End date : <%= booking.end_date %></p>
+            <%= link_to "Cancel", brain_booking_path(booking.brain_id, booking) , class: "btn btn-ghost", data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+          <% end %>
+        </div>
+      </div>
 
-      <h2>All my bookings</h2>
-        <% @bookings.each do |booking| %>
-          <div class="card">
-          <h3><%= booking.brain.name %></h3>
-          <p>Start date : <%= booking.start_date %></p>
-          <p>End date : <%= booking.end_date %></p>
-          <%= link_to "Cancel", brain_booking_path(booking.brain_id, booking) , data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-        <% end %>
-    </div>
+      <div class="delete-account">
+        <%= link_to "Delete my account", cancel_user_registration_path, class: "btn btn-ghost", data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+      </div>
     </div>
   </div>
 </div>

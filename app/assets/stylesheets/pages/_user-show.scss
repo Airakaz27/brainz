@@ -1,0 +1,36 @@
+.username {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 30px;
+}
+
+.card-brain-dashboard {
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid $neutral-dark;
+  box-shadow: 4px 4px 1px 1px $neutral-dark;
+  background-color: $white;
+  margin: 15px 0;
+
+  h2 {
+    padding-bottom: 20px;
+  }
+}
+
+.card-bookings-dashboard {
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid $neutral-dark;
+  box-shadow: 4px 4px 1px 1px $neutral-dark;
+  background-color: $white;
+  margin-top: 30px;
+
+  h2 {
+    padding-bottom: 20px;
+  }
+}
+
+.delete-account {
+  padding: 15px;
+  text-align: end;
+}
