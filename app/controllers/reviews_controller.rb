@@ -3,7 +3,10 @@ class ReviewsController < ApplicationController
 
   def new
     if current_user
-    @review = Review.new(brain_id: @brain.id)
+      @review = Review.new(brain_id: @brain.id)
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def create
