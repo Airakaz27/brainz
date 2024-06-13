@@ -1,0 +1,49 @@
+.edit-user {
+  background: $white;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 4px 4px 1px 1px $neutral-dark;
+  max-width: 400px;
+  width: 100%;
+  margin-bottom: 40px;
+  h2, h3 {
+    margin-top: 0;
+    text-align: center;
+  }
+  .form-inputs {
+    margin-bottom: 20px;
+  }
+  .form-inputs input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  .form-inputs input::placeholder {
+    color: #d1d1d1;
+  }
+  .form-actions {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .cancel-account {
+    text-align: center;
+    margin-top: 20px;
+  }
+  .back-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: $purple;
+    text-decoration: none;
+  }
+  .back-link:hover {
+    text-decoration: underline;
+  }
+  .confirmation-message {
+    font-size: 0.9em;
+    color: #888;
+    text-align: center;
+  }
+}
