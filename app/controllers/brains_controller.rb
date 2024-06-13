@@ -8,6 +8,7 @@ class BrainsController < ApplicationController
   def show
     @user = current_user
     @booking = Booking.new
+    @price = @brain.price_per_day
   end
 
   def new
