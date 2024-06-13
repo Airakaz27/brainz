@@ -137,6 +137,11 @@
   }
 }
 
+.card-show-delete {
+  display: flex;
+  justify-content: space-between;
+}
+
 .card-reviews {
   margin: 40px 0;
   border-radius: 20px;
