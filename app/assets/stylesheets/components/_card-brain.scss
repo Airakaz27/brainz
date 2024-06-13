@@ -93,6 +93,16 @@
   }
 }
 
+.delete-on-image {
+  position: relative;
+
+  .delete {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+}
+
 .card-brain-infos {
   padding: 25px;
 }
