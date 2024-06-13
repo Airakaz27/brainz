@@ -56,7 +56,7 @@
               <div class="edit">
                 <% if current_user %>
                   <% if @user.id == @brain.user_id %>
-                    <%= link_to "Edit your brain", edit_brain_path(@brain), class: "btn btn-ghost"%>
+                    <%= link_to "Edit your brain", edit_brain_path(@brain), class: "btn filter__btn"%>
                   <% end %>
                 <% end %>
               </div>
