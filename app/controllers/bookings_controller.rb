@@ -14,16 +14,19 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(booking_params)
-    # rajouter un if pour vérifier que le user est connecté sinon le renvoyer vers la page de cnnexion
-    @booking.user_id = @user.id
-    @booking.brain_id = @brain.id
-    # calculate total price
-    @booking.total_price = @brain.price_per_day * (@booking.end_date - @booking.start_date).to_i
-    if @booking.save
-      redirect_to brain_booking_path(@brain.id, @booking)
+    if current_user
+      @booking = Booking.new(booking_params)
+      @booking.user_id = @user.id
+      @booking.brain_id = @brain.id
+      # calculate total price
+      @booking.total_price = @brain.price_per_day * (@booking.end_date - @booking.start_date).to_i
+      if @booking.save
+        redirect_to brain_booking_path(@brain.id, @booking)
+      else
+        render :new, status: :unprocessable_entity
+      end
     else
-      render :new, status: :unprocessable_entity
+      redirect_to new_user_session_path
     end
   end
 
