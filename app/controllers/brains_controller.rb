@@ -33,8 +33,9 @@ class BrainsController < ApplicationController
   end
 
   def destroy
+    @user = current_user
     @brain.destroy
-    redirect_to user_path(current_user.id), status: :see_other
+    redirect_to user_path(@user.id), status: :see_other
   end
 
   private
