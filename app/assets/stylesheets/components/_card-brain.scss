@@ -4,6 +4,10 @@
   border-radius: 20px;
   background-color: $white;
   box-shadow: 4px 4px 1px 1px $neutral-dark;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 95%;
 
 
   &__title {
