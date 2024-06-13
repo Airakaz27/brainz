@@ -9,6 +9,8 @@ class BrainsController < ApplicationController
     @user = current_user
     @booking = Booking.new
     @price = @brain.price_per_day
+    @bookings = Booking.where(brain_id: @brain.id)
+    @dates_booking = @bookings.map { |booking| { from: booking.start_date, to: booking.end_date } }.to_json
   end
 
   def new
