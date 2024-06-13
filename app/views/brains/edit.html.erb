@@ -1,9 +1,11 @@
-<%= simple_form_for(@brain) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :qi %>
-  <%= f.input :languages, collection: Brain::LANGUAGES, multiple: true %>
-  <%= f.input :specialties, collection: Brain::SPECIALTIES, multiple: true %>
-  <%= f.input :price_per_day %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit %>
-<% end %>
+<div class="container">
+  <%= simple_form_for(@brain) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :qi %>
+    <%= f.input :languages, collection: Brain::LANGUAGES, multiple: true %>
+    <%= f.input :specialties, collection: Brain::SPECIALTIES, multiple: true %>
+    <%= f.input :price_per_day %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit %>
+  <% end %>
+</div>

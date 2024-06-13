@@ -14,9 +14,11 @@
                 <% end %>
               </div>
               <div class="delete">
-                <% if @user.id == @brain.user_id %>
-                  <%= link_to brain_path(@brain), class: "btn btn-delete", data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} do%>
-                    <i class="fa-solid fa-xmark" style="color: #322A3D;"></i>
+                <% if current_user %>
+                  <% if @user.id == @brain.user_id %>
+                    <%= link_to brain_path(@brain), class: "btn btn-delete", data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} do%>
+                      <i class="fa-solid fa-xmark" style="color: #322A3D;"></i>
+                    <% end %>
                   <% end %>
                 <% end %>
               </div>
@@ -52,8 +54,10 @@
               </div>
 
               <div class="edit">
-                <% if @user.id == @brain.user_id %>
-                  <%= link_to "Edit your brain", edit_brain_path(@brain), class: "btn btn-ghost"%>
+                <% if current_user %>
+                  <% if @user.id == @brain.user_id %>
+                    <%= link_to "Edit your brain", edit_brain_path(@brain), class: "btn btn-ghost"%>
+                  <% end %>
                 <% end %>
               </div>
             </div>
@@ -85,8 +89,7 @@
                 </div>
               <% end %>
             <div class="total-price">
-              <h3>Total price : $</h3>
-              <p data-price-calculator-target="total"></p>
+              <p data-price-calculator-target="total"></p><p>$</p>
             </div>
             </div>
 

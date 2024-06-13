@@ -195,9 +195,10 @@
   display: flex;
   justify-content: end;
 
-  h3 {
+  p {
     text-align: end;
     padding: 25px;
     color: $purple;
+    font-family: $headers-font;
   }
 }
