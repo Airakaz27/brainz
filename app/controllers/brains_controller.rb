@@ -3,6 +3,7 @@ class BrainsController < ApplicationController
 
   def index
     @brains = Brain.all
+    filter_brains if params[:filter].present?
   end
 
   def show
@@ -43,6 +44,26 @@ class BrainsController < ApplicationController
   end
 
   private
+
+  def filter_brains
+    if params[:filter][:qi].present?
+      @brains = @brains.where("qi >= ?", params[:filter][:qi])
+    end
+
+    if params[:filter][:languages].present?
+      selected_languages = params[:filter][:languages].reject(&:blank?)
+      @brains = @brains.select { |brain| (brain.languages & selected_languages).present? }
+    end
+
+    if params[:filter][:specialties].present?
+      selected_specialties = params[:filter][:specialties].reject(&:blank?)
+      @brains = @brains.select { |brain| (brain.specialties & selected_specialties).present? }
+    end
+
+    if params[:filter][:price_per_day].present?
+      @brains = @brains.where("price_per_day <= ?", params[:filter][:price_per_day])
+    end
+  end
 
   def brain_params
     params.require(:brain).permit(:photo, :name, :qi, :price_per_day, languages: [], specialties: [])

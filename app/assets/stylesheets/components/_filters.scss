@@ -1,5 +1,26 @@
-.filter__sidebar {
-  flex: 0 0 300px;
-  padding: 10px;
-  border-right: 1px solid #ccc;
+.filters__sidebar {
+  position: sticky;
+  top: 40px;
+  max-width: 300px;
+  margin: 0 auto;
+  border: 1px solid rgba(24, 24, 24, 0.2);
+  border-radius: 16px;
+  height: 100%;
+  border: 1px solid $neutral-dark;
+}
+
+.filters__sidebar .form-control {
+  margin-bottom: 16px;;
+}
+
+.filters__sidebar .form-check {
+  margin-bottom: 8px;
+}
+
+.filters__sidebar .btn {
+  width: 100%;
+}
+
+.filters__sidebar label {
+  font-weight: 700;
 }
