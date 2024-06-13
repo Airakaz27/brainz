@@ -5,7 +5,6 @@
         <h2>
           Welcome <%= @user.first_name %> <%= @user.last_name %> !
         </h2>
-        <%= link_to "Add a brain", new_brain_path %>
         <%= link_to "Edit my profile", edit_user_registration_path(@user), class: "main-button" %>
       </div>
 
@@ -55,6 +54,9 @@
       <% end %>
     <% end %>
   </div>
+  <div class="add-a-brain">
+    <%= link_to "Add a brain", new_brain_path, class: "main-button" %>
+  </div>
 </div>
 
       <div class="card-bookings-dashboard">
@@ -76,7 +78,7 @@
       </div>
 
       <div class="delete-account">
-        <%= link_to "Delete my account", cancel_user_registration_path, class: "btn btn-ghost", data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+        <%= link_to "Delete my account", cancel_user_registration_path, class: "main-button", data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
       </div>
     </div>
   </div>
