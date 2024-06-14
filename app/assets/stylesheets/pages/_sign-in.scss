@@ -1,0 +1,54 @@
+h2 {
+  text-align: center;
+}
+.login-form {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid rgba(23, 23, 23, 0.2);
+  border-radius: 20px;
+  background-color: $white;
+  box-shadow: 4px 4px 1px 1px $neutral-dark;
+
+  .form-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+  }
+
+  .links {
+    text-align: center;
+  }
+
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+  }
+
+  .form-check-input {
+    margin-right: 10px;
+  }
+
+  .form-check-label {
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+
+  .form-actions {
+    text-align: center;
+  }
+
+  .devise-links {
+    text-align: center;
+    margin-top: 15px;
+    a {
+      color: yellow;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+}
