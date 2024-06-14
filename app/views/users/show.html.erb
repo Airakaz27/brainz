@@ -8,6 +8,7 @@
         <%= link_to "Edit my profile", edit_user_registration_path(@user), class: "main-button" %>
       </div>
 
+    <h2 class="dashboard-title">All my brains</h2>
       <div class="content">
   <div class="grid__cards-dashboard mb-5">
     <% @brains.each do |brain| %>
@@ -60,20 +61,22 @@
 </div>
 
       <div class="card-bookings-dashboard">
-        <h2>All my bookings</h2>
-        <div class="card-booking">
+        <h2 class="dashboard-title">All my bookings</h2>
+        <div class="grid__cards-bookings mb-5">
           <% @bookings.each do |booking| %>
-            <div class="card-booking-infos">
-              <h3><%= booking.brain.name %></h3>
-              <div class="booking-date">
-                <p><strong>Start date :  </strong><%= booking.start_date %></p>
-                <p><strong>End date :  </strong><%= booking.end_date %></p>
+            <div class="card-booking">
+              <div class="card-booking-infos">
+                <h3><%= booking.brain.name %></h3>
+                <div class="booking-date">
+                  <p><strong>Start date :  </strong><%= booking.start_date %></p>
+                  <p><strong>End date :  </strong><%= booking.end_date %></p>
+                </div>
+                <div class="cancel-booking">
+                  <%= link_to "Cancel", brain_booking_path(booking.brain_id, booking) , class: "btn filter__btn", data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+                </div>
               </div>
-              <div class="cancel-booking">
-                <%= link_to "Cancel", brain_booking_path(booking.brain_id, booking) , class: "btn filter__btn", data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-              </div>
-              <% end %>
-            </div>
+          </div>
+          <% end %>
         </div>
       </div>
 

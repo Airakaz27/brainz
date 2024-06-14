@@ -149,6 +149,7 @@
   display: flex;
   justify-content: end;
   color: $purple;
+  margin-bottom: 20px;
 
   h3 {
     font-size: 30px;
@@ -196,8 +197,9 @@
 
   p {
     text-align: end;
-    padding: 25px;
     color: $purple;
     font-family: $headers-font;
+    font-size: 34px;
+    padding: 5px;
   }
 }
