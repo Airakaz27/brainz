@@ -1,4 +1,4 @@
-<div class="review">
+<div class="add-review-form">
   <div class="row">
     <div class="col">
       <h1>What do you think about <%= @brain.name %>?</h1>
@@ -7,7 +7,7 @@
         <%= f.input :comment, input_html: { class: 'input comment' } %>
         <%= f.input :rating %>
         <br>
-        <%= f.submit 'Submit', class: "filter__btn" %>
+        <%= f.submit 'Submit', class: "btn filter__btn" %>
       <% end %>
     </div>
   </div>

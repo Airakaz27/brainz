@@ -1,14 +1,4 @@
 .review {
-  max-width: 550px;
-  height: 480px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid rgba(23, 23, 23, 0.2);
-  border-radius: 20px;
-  background-color: $white;
-  box-shadow: 4px 4px 1px 1px $neutral-dark;
-  margin-bottom: 50px;
 
   .row {
     display: flex;
@@ -45,4 +35,17 @@
   .input.comment {
     height: 160px;
   }
+}
+
+.add-review-form {
+  max-width: 550px;
+  height: 480px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid rgba(23, 23, 23, 0.2);
+  border-radius: 20px;
+  background-color: $white;
+  box-shadow: 4px 4px 1px 1px $neutral-dark;
+  margin-bottom: 50px;
 }
