@@ -4,9 +4,20 @@
   padding-bottom: 30px;
 }
 
+.content {
+  padding-top: 20px;
+}
+
 .grid__cards-dashboard {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: auto;
+  gap: 30px;
+}
+
+.grid__cards-bookings {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: auto;
   gap: 30px;
 }
@@ -56,4 +67,12 @@
 .delete-account {
   padding: 25px 0;
   text-align: end;
+}
+
+.dashboard-title {
+  font-family: $body-font;
+  font-size: 28px;
+  text-align: left;
+  border-top: 2px solid $neutral-dark;
+  padding-top: 15px;
 }
