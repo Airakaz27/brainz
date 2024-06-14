@@ -54,7 +54,7 @@ cyrilbrain = Brain.create(
 Brain.create(
   name: "Jeremy",
   qi: 180,
-  languages: ["French", "English", "Spanish", "Mandarin"],
+  languages: ["French", "English", "Mandarin"],
   specialties: ["Dev Profil", "Eloquence"],
   price_per_day: 307,
   user_id: jeremy.id,
@@ -108,16 +108,6 @@ Brain.create(
   specialties: ["Dev Profil", "Artist Soul"],
   price_per_day: 185,
   user_id: cyril.id,
-  image: "brainzImage.png"
-)
-
-Brain.create(
-  name: "Johanna",
-  qi: 46,
-  languages: ["French"],
-  specialties: ["Humor", "Sporty Mindset"],
-  price_per_day: 85,
-  user_id: jeremy.id,
   image: "brainzImage.png"
 )
 

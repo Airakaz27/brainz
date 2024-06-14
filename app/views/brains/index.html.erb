@@ -62,7 +62,7 @@
       <%= f.input :price_per_day, label: "Price Max", input_html: { class: "form-control"} %>
     </div>
     <div class="text-end">
-      <%= f.submit 'Filter', class: "filter__btn" %>
+      <%= f.submit 'Filter', class: "btn filter__btn" %>
     </div>
   <% end %>
 </div>
@@ -106,8 +106,7 @@
             </div>
           </div>
           <div>
-            <h3 class="card-index__title">Price / Day:</h3>
-            <div class="card-index__text-price"><%= brain.price_per_day %> €</div>
+            <div class="card-index__text-price"><%= brain.price_per_day %> € / Day</div>
           </div>
         </div>
       <% end %>
