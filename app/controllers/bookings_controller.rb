@@ -41,7 +41,7 @@ class BookingsController < ApplicationController
   def accept
     @booking = Booking.find(params[:id])
     @booking.update(status: 'approved')
-    redirect_to brain_booking_path(@brain, @booking)
+    redirect_to user_path(@user), notice: "Booking successfully accepted!"
   end
 
   def reject

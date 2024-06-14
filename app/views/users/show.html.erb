@@ -80,17 +80,28 @@
         </div>
       </div>
 
-      <div class="delete-account">
-        <%= link_to "Delete my account", cancel_user_registration_path, class: "main-button", data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-      </div>
     </div>
   </div>
 </div>
+<div class="card-bookings-dashboard">
+  <h2 class="dashboard-title">All my booking requests</h2>
+  <div class="grid__cards-bookings mb-5">
+    <% @received_bookings.each do |booking| %>
+      <div class="card-booking">
+        <div class="card-booking-infos">
+          <p><strong>Start date : </strong><%= booking.start_date %></p>
+          <p><strong>End date : </strong><%= booking.end_date %></p>
+          <p><strong>Price : </strong><%= booking.total_price %> €</p>
+          <%= link_to 'Accept', accept_brain_booking_path(booking.brain, booking), data: { turbo_method: :patch }, class: 'btn filter__btn my-3' %>
+          <%= link_to 'Reject', reject_brain_booking_path(booking.brain, booking), data: { turbo_method: :patch }, class: 'btn filter__btn my-3' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
 
-<% @received_bookings.each do |booking| %>
-  <p><strong>Start date : </strong><%= booking.start_date %></p>
-  <p><strong>End date : </strong><%= booking.end_date %></p>
-  <p><strong>Price : </strong><%= booking.total_price %> €</p>
-  <%= link_to 'Accept', accept_brain_booking_path(booking.brain, booking), data: { turbo_method: :patch }, class: 'btn filter__btn' %>
-  <%= link_to 'Reject', reject_brain_booking_path(booking.brain, booking), data: { turbo_method: :patch }, class: 'btn filter__btn' %>
-<% end %>
+<div class="delete-account">
+  <%= link_to "Delete my account", cancel_user_registration_path, class: "main-button", data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+</div>
+
+<%= render "shared/flashes" %>
