@@ -66,7 +66,7 @@
     <div class="content">
   <div class="grid__cards mb-5">
     <% @brains.each do |brain| %>
-      <%= link_to brain_path(brain), data: { filters_target:"card", price: brain.price_per_day, qi: brain.qi, languages: brain.languages.join, specialties: brain.specialties } do %>
+      <%= link_to brain_path(brain), data: { filters_target:"card", price: brain.price_per_day, qi: brain.qi, languages: brain.languages.join(" "), specialties: brain.specialties } do %>
         <div class="card-index" >
           <div class="container-image mb-3">
             <% if brain.photo.attached? %>

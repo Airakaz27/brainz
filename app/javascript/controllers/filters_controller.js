@@ -17,6 +17,10 @@ export default class extends Controller {
   update(event) {
     event.preventDefault()
 
+    this.cardTargets.forEach(card => {
+      card.classList.remove('d-none')
+    })
+
     const filterLanguages = []
     const filterSpecialties = []
 
@@ -69,7 +73,7 @@ export default class extends Controller {
 
   filterByLanguage(cards, filterLanguages) {
     cards.forEach(card => {
-      if(!card.dataset.languages.includes(filterLanguages.join())) {
+      if(!card.dataset.languages.includes(filterLanguages.join(" "))) {
         card.classList.add("d-none")
       }
     })
@@ -78,8 +82,6 @@ export default class extends Controller {
     cards.forEach(card => {
       if (card.dataset.qi < filterQi) {
         card.classList.add("d-none")
-      } else {
-        card.classList.remove("d-none")
       }
     })
   }
