@@ -21,6 +21,16 @@
   border-radius: 4px;
   padding: 7px;
   font-weight: 500;
+  align-items: center;
+
+  &:hover {
+    background-color: $pink-light;
+    // border: 1px solid $neutral-dark;
+  }
+}
+
+.add-review {
+  margin-bottom: 25px;
 }
 
 .main-button {

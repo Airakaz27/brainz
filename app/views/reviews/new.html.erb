@@ -1,12 +1,13 @@
-<div class="container">
+<div class="add-review-form">
   <div class="row">
     <div class="col">
       <h1>What do you think about <%= @brain.name %>?</h1>
 
       <%= simple_form_for [@brain, @review] do |f| %>
-        <%= f.input :comment %>
+        <%= f.input :comment, input_html: { class: 'input comment' } %>
         <%= f.input :rating %>
-        <%= f.submit %>
+        <br>
+        <%= f.submit 'Submit', class: "btn filter__btn" %>
       <% end %>
     </div>
   </div>

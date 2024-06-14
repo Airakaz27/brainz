@@ -56,7 +56,7 @@
               <div class="edit">
                 <% if current_user %>
                   <% if @user.id == @brain.user_id %>
-                    <%= link_to "Edit your brain", edit_brain_path(@brain), class: "btn btn-ghost"%>
+                    <%= link_to "Edit your brain", edit_brain_path(@brain), class: "btn filter__btn"%>
                   <% end %>
                 <% end %>
               </div>
@@ -83,7 +83,7 @@
               </div>
             <% end %>
           </div>
-          <%= link_to "Add a review", new_brain_review_path(@brain), class: "btn btn-ghost"%>
+          <%= link_to "Add a review", new_brain_review_path(@brain), class: "btn main-button add-review"%>
         </div>
 
 
@@ -101,11 +101,11 @@
                             as: :string,
                             input_html: { data: { controller: "datepicker", datepicker_date_value: @dates_booking, price_calculator_target: "end", action: "change->price-calculator#update"}} %>
                 <div class="book-button">
-                  <%= f.submit "Book Me", class: "btn btn-ghost"%>
+                  <%= f.submit "Book Me", class: "btn filter__btn"%>
                 </div>
               <% end %>
             <div class="total-price">
-              <p data-price-calculator-target="total"></p><p>$</p>
+              <p data-price-calculator-target="total"></p><p>€</p>
             </div>
             </div>
 
