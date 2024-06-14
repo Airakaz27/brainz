@@ -1,11 +1,23 @@
 <div class="container">
-  <%= simple_form_for(@brain) do |f| %>
-    <%= f.input :name %>
-    <%= f.input :qi %>
-    <%= f.input :languages, collection: Brain::LANGUAGES, multiple: true %>
-    <%= f.input :specialties, collection: Brain::SPECIALTIES, multiple: true %>
-    <%= f.input :price_per_day %>
-    <%= f.input :photo, as: :file %>
-    <%= f.submit %>
+  <%= simple_form_for(@brain, html: { class: 'brain-form' }) do |f| %>
+    <div class="form-group">
+      <%= f.input :name, label_html: { class: 'form-label' }, input_html: { class: 'form-control' }  %>
+    </div>
+    <div class="form-group">
+      <%= f.input :qi, label_html: { class: 'form-label' }, input_html: { class: 'form-control' } %>
+    </div>
+    <div class="form-group">
+      <%= f.input :languages, collection: Brain::LANGUAGES, multiple: true, as: :check_boxes, include_hidden: false, label_html: { class: 'form-label' }, item_wrapper_class: 'checkbox-wrapper', input_html: { class: 'form-check-input custom-checkbox' }  %>
+    </div>
+    <div class="form-group">
+      <%= f.input :specialties, collection: Brain::SPECIALTIES, multiple: true, as: :check_boxes, include_hidden: false, label_html: { class: 'form-label' }, item_wrapper_class: 'checkbox-wrapper', input_html: { class: 'form-check-input custom-checkbox' }  %>
+    </div>
+    <div class="form-group">
+      <%= f.input :price_per_day, label_html: { class: 'form-label' }, input_html: { class: 'form-control' }  %>
+    </div>
+    <div class="form-group">
+      <%= f.input :photo, as: :file, label_html: { class: 'form-label' }, input_html: { class: 'form-control-file' }  %>
+    </div>
+    <%= f.submit 'Edit your brain', class: 'btn filter__btn' %>
   <% end %>
 </div>
