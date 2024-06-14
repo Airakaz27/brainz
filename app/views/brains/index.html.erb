@@ -1,6 +1,6 @@
 <div class="container">
 
-  <div class="banner-brainz mb-5" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path("backgroundbanner.jpg")%>);">
+  <div class="banner-brainz mb-5" style="background-image: url(<%= image_path("backgroundbanner.jpg")%>);">
     <div class="container">
       <h1>Mind your business...</h1>
       <h2>Rent a brain!</h2>
@@ -39,10 +39,6 @@
           <div class="filters-bar__text">Artist Soul</div>
         </a>
       </div>
-      <button class="filter-button d-flex align-items-center gap-2">
-        <%= image_tag("filtre-horizontal.png", alt: "filter", width: 25) %>
-          <div>Filters</div>
-      </button>
     </div>
   </div>
 
@@ -62,7 +58,7 @@
       <%= f.input :price_per_day, label: "Price Max", input_html: { class: "form-control"} %>
     </div>
     <div class="text-end">
-      <%= f.submit 'Filter', class: "filter__btn" %>
+      <%= f.submit 'Filter', class: "btn filter__btn" %>
     </div>
   <% end %>
 </div>
@@ -106,8 +102,7 @@
             </div>
           </div>
           <div>
-            <h3 class="card-index__title">Price / Day:</h3>
-            <div class="card-index__text-price"><%= brain.price_per_day %> €</div>
+            <div class="card-index__text-price"><%= brain.price_per_day %> € / Day</div>
           </div>
         </div>
       <% end %>

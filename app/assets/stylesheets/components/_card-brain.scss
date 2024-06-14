@@ -5,19 +5,35 @@
   background-color: $white;
   box-shadow: 4px 4px 1px 1px $neutral-dark;
   height: 100%;
+  width: 250px;
+  position: relative;
 
   &__title {
     font-size: 14px;
     font-family: $body-font;
     font-weight: 400;
     color: $neutral-dark;
+    padding: 5px;
   }
 
-  &__text, &__text-price {
+  &__text {
     font-weight: 700;
     color: $neutral-dark;
     font-size: 14px;
     margin-left: 7px;
+    padding: 3px;
+    padding-bottom: 14px;
+  }
+
+  &__text-price {
+    font-weight: 700;
+    color: $neutral-dark;
+    font-size: 14px;
+    // margin-left: 7px;
+    // text-align: right;
+    position: absolute;
+    bottom: 10px;
+    right: 16px;
   }
 
   &__text-QI {
@@ -30,6 +46,7 @@
   &__name {
     font-size: 40px;
     color: $neutral-dark;
+    text-align: left;
   }
 }
 
@@ -62,9 +79,9 @@
     display: flex;
     align-items: center;
     gap: 5px;
-    top: 20px;
-    left: 20px;
-    padding: 8px;
+    top: 10px;
+    left: 10px;
+    padding: 7px;
     border-radius: 10px;
     background-color: $pink;
   }
@@ -137,6 +154,7 @@
     font-family: "Montserrat Alternates";
     font-size: 26px;
     font-weight: 500;
+    text-align: left;
   }
 
   li {
