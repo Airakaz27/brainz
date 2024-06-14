@@ -5,6 +5,8 @@ class Booking < ApplicationRecord
   validates :start_date, presence: true
   validates :end_date, presence: true
 
+  enum status: { pending: "pending", accepted: "approved", rejected: "rejected" }
+
   # validate :end_date_after_start_date
   # validate :start_date_not_in_past
 

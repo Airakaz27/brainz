@@ -1,9 +1,10 @@
 class BookingsController < ApplicationController
-  before_action :set_brain, only: [:show, :new, :create, :destroy]
-  before_action :set_user, only: [:show, :new, :create]
+  before_action :set_brain, only: [:show, :new, :create, :destroy, :accept, :reject]
+  before_action :set_user, only: [:show, :new, :create, :accept, :reject]
 
   def show
     @booking = Booking.find(params[:id])
+
   end
 
   def new
@@ -35,6 +36,18 @@ class BookingsController < ApplicationController
     @booking.brain_id = @brain.id
     @booking.destroy
     redirect_to user_path(current_user.id), status: :see_other
+  end
+
+  def accept
+    @booking = Booking.find(params[:id])
+    @booking.update(status: 'approved')
+    redirect_to brain_booking_path(@brain, @booking)
+  end
+
+  def reject
+    @booking = Booking.find(params[:id])
+    @booking.update(status: 'rejected')
+    redirect_to brain_booking_path(@brain, @booking)
   end
 
   private

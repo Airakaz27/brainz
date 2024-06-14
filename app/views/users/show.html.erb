@@ -86,3 +86,11 @@
     </div>
   </div>
 </div>
+
+<% @received_bookings.each do |booking| %>
+  <p><strong>Start date : </strong><%= booking.start_date %></p>
+  <p><strong>End date : </strong><%= booking.end_date %></p>
+  <p><strong>Price : </strong><%= booking.total_price %> €</p>
+  <%= link_to 'Accept', accept_brain_booking_path(booking.brain, booking), data: { turbo_method: :patch }, class: 'btn filter__btn' %>
+  <%= link_to 'Reject', reject_brain_booking_path(booking.brain, booking), data: { turbo_method: :patch }, class: 'btn filter__btn' %>
+<% end %>
