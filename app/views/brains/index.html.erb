@@ -46,32 +46,33 @@
     </div>
   </div>
 
-  <div class="main-container d-flex positiobn-relative mb-5">
+  <div class="main-container d-flex positiobn-relative mb-5" data-controller="filters">
     <div class="filters__sidebar bg-light p-5">
-  <%= simple_form_for :filter, url: brains_path, method: :get do |f| %>
-    <div class="mb-3">
-      <%= f.input :qi, label: "QI min", input_html: { class: "form-control" } %>
+      <%= simple_form_for :filter, url: brains_path, method: :get do |f| %>
+        <div class="mb-3">
+          <%= f.input :qi, label: "QI min", input_html: { data: { filters_target:"qi"}, class: "form-control" } %>
+        </div>
+        <div class="mb-3">
+          <%= f.input :languages, collection: Brain::LANGUAGES, multiple: true, as: :check_boxes, include_hidden: false, class: "form-check-input", input_html: { data: { filters_target:"languages"}} %>
+        </div>
+        <div data-action="click->filters#update">Update</div>
+        <div class="mb-3">
+          <%= f.input :specialties, collection: Brain::SPECIALTIES, multiple: true, as: :check_boxes, include_hidden: false, input_html: { class: "form-check-input" }, input_html: {data: { filters_target:"specialties"}} %>
+        </div>
+        <div class="mb-3">
+          <%= f.input :price_per_day, label: "Price Max", input_html: { data: { filters_target:"price"}, class: "form-control"} %>
+        </div>
+        <div class="text-end">
+          <%= f.submit 'Filter', class: "filter__btn", input_html: { data: { action:"click->filters#update:prevent"}} %>
+        </div>
+      <% end %>
     </div>
-    <div class="mb-3">
-      <%= f.input :languages, collection: Brain::LANGUAGES, multiple: true, as: :check_boxes, include_hidden: false, class: "form-check-input" %>
-    </div>
-    <div class="mb-3">
-      <%= f.input :specialties, collection: Brain::SPECIALTIES, multiple: true, as: :check_boxes, include_hidden: false, input_html: { class: "form-check-input" } %>
-    </div>
-    <div class="mb-3">
-      <%= f.input :price_per_day, label: "Price Max", input_html: { class: "form-control"} %>
-    </div>
-    <div class="text-end">
-      <%= f.submit 'Filter', class: "filter__btn" %>
-    </div>
-  <% end %>
-</div>
 
     <div class="content">
   <div class="grid__cards mb-5">
     <% @brains.each do |brain| %>
-      <%= link_to brain_path(brain) do %>
-        <div class="card-index">
+      <%= link_to brain_path(brain), data: { filters_target:"card", price: brain.price_per_day, qi: brain.qi, languages: brain.languages, specialties: brain.specialties } do %>
+        <div class="card-index" >
           <div class="container-image mb-3">
             <% if brain.photo.attached? %>
               <%= cl_image_tag(brain.photo.key) %>
