@@ -47,7 +47,7 @@ class BookingsController < ApplicationController
   def reject
     @booking = Booking.find(params[:id])
     @booking.update(status: 'rejected')
-    redirect_to brain_booking_path(@brain, @booking)
+    redirect_to user_path(@user), notice: "Booking rejected!"
   end
 
   private
